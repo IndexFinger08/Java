@@ -16,7 +16,8 @@ public class Main {
             System.out.println("6 - Buscar usuário por ID");
             System.out.println("7 - Devolver livro");
             System.out.println("8 - Emprestar livro");
-            System.out.println("9 - Sair");
+            System.out.println("9 - Listar livros emprestados");
+            System.out.println("10 - Sair");
             try{
             int opcao = sc.nextInt();
             
@@ -79,6 +80,12 @@ public class Main {
                         biblioteca.emprestarLivro(id_pegar, titulo_pegar);
                         break;
                     case 9:
+                        System.out.println("Digite o ID do usuário: ");
+                        sc.nextLine();
+                        int id_emprestado = sc.nextInt();
+                        biblioteca.livrosEmprestados(id_emprestado);
+                        break;
+                    case 10:
                         break menu;
                     default:
                         System.out.println("Digita uma opção possível.");

@@ -68,8 +68,9 @@ public class Biblioteca {
         }
         
     }
+
     public void emprestarLivro(int id, String titulo){
-        if(livros.size()>0 && usuarios.size()>0){
+        if(livros.size()>0 && usuarios.size()>0){ // vai testar se tem livros e usuários no vetor
             for(Usuario u: usuarios){
                 if(u.getId() == id){
                     for(Livro l: livros){
@@ -81,9 +82,12 @@ public class Biblioteca {
                     break;
                 }
             }
+        } else{
+            System.out.println("Erro: Não há usuários ou livros cadastrados!");
         }
         
     }
+
     public void devolverLivro(int id, String titulo){
         if(livros.size()>0 && usuarios.size()>0) {
             for(Usuario u: usuarios){
@@ -97,9 +101,21 @@ public class Biblioteca {
                     break;
                 }
             }
+        } else{
+            System.out.println("Erro: Não há usuários ou livros cadastrados!");
         }
         
         
+    }
+
+    public void livrosEmprestados(int id){
+        if(livros.size()>0 && usuarios.size()>0){
+            for(Usuario u: usuarios){
+                if(u.getId() == id){
+                    u.listarLivros();
+                }
+            }
+        }
     }
 
     public Usuario getUsuario(int i){

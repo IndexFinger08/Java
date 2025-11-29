@@ -11,23 +11,21 @@ public class Livro {
         this.disponibilidade = true;
     }
 
-    public boolean emprestar(){
+    public void emprestar(){
         if(disponibilidade){
             System.out.println("Livro emprestado com sucesso.\n");
             this.disponibilidade = false;
         } else{
             System.out.println("Não foi possível emprestar o livro: Livro já emprestado.\n");
         }
-        return disponibilidade;
     }
-    public boolean devolver(){
+    public void devolver(){
         if(disponibilidade){
             System.out.println("Não foi possível devolver o livro: Livro não emprestado.\n");
         } else{
             System.out.println("Livro devolvido com sucesso.\n");
             this.disponibilidade = true;
         }
-        return disponibilidade;
     }
     public void informacoes(){
         System.out.println("Titulo: "+this.titulo);
@@ -42,5 +40,9 @@ public class Livro {
 
     public String getTitulo(){
         return this.titulo;
+    }
+
+    public boolean getDisponibilidade(){
+        return this.disponibilidade;
     }
 }
